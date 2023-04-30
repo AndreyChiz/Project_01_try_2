@@ -13,7 +13,7 @@ def print_paly_list(songs_titles: str, *args: int) -> None:
     '''
     Вывести список песен из строки song_titles в порядке указанном в *args
 
-    :param songs_titles:  строка со списком песен разделенных ", "
+    :param songs_titles:  строка со списком песен
     :param args: очередь номеров песен, номера соответствуют очередности песен
     в song_titles от 1 до len(songs_titles)
     '''
