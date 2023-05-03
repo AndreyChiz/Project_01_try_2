@@ -11,7 +11,23 @@
 # функции sorted, max и min использовать нельзя!
 
 def minimum(arr):
-    pass
+    min_x = arr[0]
+    for numb in arr:
+        if numb < min_x:
+            min_x = numb
+
+    return min_x
+
+print(minimum([-52, 56, 30, 29, -54, 0, -110]))
+
+
 
 def maximum(arr):
-    pass
+    max_x = arr[0]
+    for numb in arr:
+        if numb > max_x:
+            max_x = numb
+
+    return max_x
+
+print(maximum([-52, 56, 30, 29, -54, 0, -110]))
