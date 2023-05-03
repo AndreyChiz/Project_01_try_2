@@ -36,9 +36,10 @@ def totals_calculation(titles: {str: str}, store: {str: [{str: int}]}) -> {str: 
     """
     Возвратщает словарь с суммарноым количеством и общей стоимостью каждой позиции
 
-    :param titles: dict{<наименование_товара>str: <код_товара>str}
-    :param store: dict{<код_товара>:str :[{'total_quantity': <количество>int,'total_price': <цена>int}]
-    :return: dict{<наименование_товара>str : {<общее количество>: int, <общая_стоимость>: int}>}
+    :param titles: dict{<наименование_товара>str : <код_товара>str}
+    :param store: dict{<код_товара>:str :[{'quantity' : <количество>int, 'price' : <цена>int}]
+    :return: dict{<наименование_товара>str : {'total_quantity' : <общее количество>:int,
+     'total_price' : <общая_стоимость>:int}>}
     """
     result = dict((i, {'total_quantity': sum((j['quantity'] for j in store[titles[i]])),
                        'total_price': sum((j['quantity'] * j['price'] for j in store[titles[i]]))}) for i in titles)
