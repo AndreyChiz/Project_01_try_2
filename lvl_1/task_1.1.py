@@ -21,4 +21,6 @@ def print_paly_list(songs_titles: str, *args: int) -> None:
     for song in (wrap_song_dict[i] for i in args):
         print(song)
 
-print_paly_list(my_favorite_songs, 1, 5, 2, 4)
+
+if __name__ == '__main__':
+    print_paly_list(my_favorite_songs, 1, 5, 2, 4)
