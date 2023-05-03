@@ -10,12 +10,22 @@ import math
 months = {1: 'январь', 2: 'февраль', 3: 'март', 4: 'апрель', 5: 'май', 6: 'июнь', 7: 'июль', 8: 'август',
           9: 'сентябрь', 10: 'октябрь', 11: 'ноябрь', 12: 'декабрь'
           }
-quarter_name = {1: 'первого', 2: 'второго', 3: 'третьего', 4: 'четвертого'}
+quarter_name = {1: 'первого', 2: 'второго', 3: 'третьего', 4: 'четвёртого'}
 
-month_number = int(input('Введите номер месяца: '))
-print(f'месяц {month_number} ({months[month_number]})'
-      f' является частью {quarter_name[math.ceil(month_number / 3)]} квартала.'
-      )
+def quarter_month(month_number: int)-> str:
+    """
+    Возвращает номер квартал по номеру месяца
+
+    :param month_number: номер месяца
+    :return: str
+    """
+    return (f'месяц {month_number} ({months[month_number]})'
+          f' является частью {quarter_name[math.ceil(month_number / 3)]} квартала.'
+          )
+
+
+print(quarter_month(int(input('Введите номер месяца: '))))
+
 
 # class Task:
 #     months = {1: 'январь', 2: 'февраль', 3: 'март', 4: 'апрель', 5: 'май', 6: 'июнь', 7: 'июль', 8: 'август',
