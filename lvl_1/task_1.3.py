@@ -1,5 +1,5 @@
 # Задача 1.3.
-from dataclasses import dataclass
+
 # Напишите скрипт, который принимает от пользователя номер месяца,
 # а возвращает количество дней в нем.
 # Результат проверки вывести на консоль
@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from calendar import monthrange
 
 
-@dataclass
+
 class DayMonth:
 
     months = {
