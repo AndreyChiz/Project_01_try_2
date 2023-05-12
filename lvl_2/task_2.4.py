@@ -47,7 +47,12 @@ print(remove_last_em('!hallo!!!!'))
 # remove("Hi! Hi!! Hi!") === "Hi!!"
 # remove("Hi! !Hi! Hi!") === "!Hi!"
 
-def remove_word_with_one_em(s):
+def remove_word_with_one_em(s:str)-> list:
+    """
+    Удаляет слова из предложения, если они содержат ровно один восклицательный знак.
+    :param s: str
+    :return:
+    """
     return [i for i in s.split() if i.count('!') != 1]
 
 print(*remove_word_with_one_em("Hi! !Hi! Hi!"))
