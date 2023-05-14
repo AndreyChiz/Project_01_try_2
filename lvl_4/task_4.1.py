@@ -36,11 +36,9 @@ try:
 
         connection_.commit()
 
-
 except sqlite3.Error as e:
     connection_.rollback()
-    print("Ошибка выполнения транзакции:", e)
-
+    print("Ошибка: таблица с таким названием существует")
 finally:
     connection_.close()
 
@@ -76,10 +74,9 @@ def student_info(student_id: int, path) -> tuple:
         if data:
             return data
         else:
-            return ('Отсутствует',)*4
-
+            return ('Отсутствует',) * 4
     except sqlite3.Error as e:
-        print("Ошибка выполнения запроса:", 'Таблица существует' if e=='UNIQUE constraint failed: Students.School_Id' else e)
+        print("Ошибка выполнения запроса:", e)
     finally:
         connection_.close()
 
